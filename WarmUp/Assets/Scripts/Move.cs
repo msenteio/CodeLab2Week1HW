@@ -48,11 +48,12 @@ public class Move : MonoBehaviour
 
 	}
 
-	void OnCollisionEnter(Collider other) 
+	void OnTriggerEnter2D(Collider2D other) 
 	{
 		if (other.gameObject.CompareTag ("Ball")) {
-			
-			other.gameObject.SetActive (false);
+
+			Destroy (other.gameObject); 
+			//other.gameObject.SetActive (false);
 
 			coin.Play (); 
 			//gameObject.GetComponent<Renderer>().color = new Color (0.5f, 0.5f, 0.5f, 1f);
