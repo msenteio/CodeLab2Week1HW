@@ -9,13 +9,17 @@ public class Move : MonoBehaviour
 	public SpriteRenderer renderer; 
 	public GameObject player; 
 	public AudioSource coin; 
+	public int score;
+	public GUIText scoreText; 
 
 	public float playerSpeed = 50; //speed player moves
 
 	void Start () {
 
+
 		rigidbody = GetComponent<Rigidbody2D>();
 		renderer = GetComponent<SpriteRenderer>();
+
 
 	}
 
@@ -54,13 +58,16 @@ public class Move : MonoBehaviour
 
 			Destroy (other.gameObject); 
 			//other.gameObject.SetActive (false);
-
+			score += 1;
+			scoreText = "Score: " + score;
 			coin.Play (); 
 			//gameObject.GetComponent<Renderer>().color = new Color (0.5f, 0.5f, 0.5f, 1f);
 
 		} 
 
 	}
+
+
 
 
 }

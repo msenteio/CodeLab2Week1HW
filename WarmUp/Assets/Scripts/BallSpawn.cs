@@ -4,10 +4,11 @@ using System.Collections;
 public class BallSpawn : MonoBehaviour {
 
 	public Sprite[] sprites;
+	public float time = .3f; 
 
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating("Spawn", 1, 1);
+		InvokeRepeating("Spawn", time, 1);
 	}
 
 	// Update is called once per frame
