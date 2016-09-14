@@ -58,8 +58,8 @@ public class Move : MonoBehaviour
 
 			Destroy (other.gameObject); 
 			//other.gameObject.SetActive (false);
-			score += 1;
-			scoreText = "Score: " + score;
+			//score += 1;
+			//scoreText = "Score: " + score;
 			coin.Play (); 
 			//gameObject.GetComponent<Renderer>().color = new Color (0.5f, 0.5f, 0.5f, 1f);
 
