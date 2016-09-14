@@ -11,6 +11,7 @@ public class Move : MonoBehaviour
 	public AudioSource coin; 
 	public int score;
 	public GUIText scoreText; 
+	public Sprite[] sprites;
 
 	public float playerSpeed = 50; //speed player moves
 
@@ -54,6 +55,10 @@ public class Move : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other) 
 	{
+		//int num = GetComponent<GetColor>().GetSpriteColor();
+
+		//GetComponent<SpriteRenderer>().sprite = sprites[num];
+
 		if (other.gameObject.CompareTag ("Ball")) {
 
 			Destroy (other.gameObject); 
@@ -61,10 +66,13 @@ public class Move : MonoBehaviour
 			//score += 1;
 			//scoreText = "Score: " + score;
 			coin.Play (); 
+			renderer.color = new Color (0f, 0f, 0f, 1f);
 			//gameObject.GetComponent<Renderer>().color = new Color (0.5f, 0.5f, 0.5f, 1f);
 
-		} 
+		} else {
+			renderer.color = new Color(255f, 166f, 245f, 255f);
 
+		}
 	}
 
 
