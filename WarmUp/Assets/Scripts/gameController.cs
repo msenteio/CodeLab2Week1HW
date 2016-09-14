@@ -3,28 +3,25 @@ using System.Collections;
 
 public class gameController : MonoBehaviour {
 
-	public GUIText scoreText;
-	private int score;
+	public GameObject blueRing;
+	public GameObject redRing;
+	public GameObject win; 
 
 	// Use this for initialization
 	void Start () {
-		score = 0;
-		UpdateScore ();
+
+	
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		Win (); 
+	}
+	 
+	void Win (){
+		if ((blueRing.gameObject == null) & (redRing.gameObject == null)){ 
+			win.SetActive(true); 
+		}	
 	
-	}
-
-	public void AddScore (int newScoreValue)
-	{
-		score += newScoreValue;
-		UpdateScore ();
-	}
-
-	void UpdateScore ()
-	{
-		//scoreText.text = "Score: " + score;
 	}
 }

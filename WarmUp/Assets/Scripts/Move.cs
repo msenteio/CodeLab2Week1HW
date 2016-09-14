@@ -9,11 +9,15 @@ public class Move : MonoBehaviour
 	public SpriteRenderer renderer; 
 	public GameObject player; 
 	public AudioSource coin; 
+	public AudioSource bump; 
 	public int score;
 	public GUIText scoreText; 
 	public Sprite[] sprites;
+	public GameObject barrier;
 
 	public float playerSpeed = 50; //speed player moves
+
+	private int blueBallCount; 
 
 	void Start () {
 
@@ -59,21 +63,61 @@ public class Move : MonoBehaviour
 
 		//GetComponent<SpriteRenderer>().sprite = sprites[num];
 
-		if (other.gameObject.CompareTag ("Ball")) {
+		if (other.gameObject.CompareTag ("BallBlue")) {
 
 			Destroy (other.gameObject); 
 			//other.gameObject.SetActive (false);
 			//score += 1;
 			//scoreText = "Score: " + score;
 			coin.Play (); 
-			renderer.color = new Color (0f, 0f, 0f, 1f);
+			//renderer.color = new Color (0f, 0f, 0f, 1f);
+//			blueBallCount++; 
+//			if (blueBallCount >= 10) {
+//				Destroy (barrier); 
+			}
+
+			if (other.gameObject.CompareTag ("BallGreen")) {
+
+				Destroy (other.gameObject); 
+				//other.gameObject.SetActive (false);
+				//score += 1;
+				//scoreText = "Score: " + score;
+				coin.Play (); 
+				//renderer.color = new Color (0f, 0f, 0f, 1f);
+				//blueBallCount++; 
+//				if (blueBallCount >= 10) {
+//					Destroy (barrier); 
+				}
+
+			if (other.gameObject.CompareTag ("BallRed")) {
+
+				Destroy (other.gameObject); 
+				//other.gameObject.SetActive (false);
+				//score += 1;
+				//scoreText = "Score: " + score;
+				coin.Play (); 
+				//renderer.color = new Color (0f, 0f, 0f, 1f);
+//				blueBallCount++; 
+//				if (blueBallCount >= 10) {
+//					Destroy (barrier); 
+				}
+
+			if (other.gameObject.CompareTag ("BallYellow")) {
+
+				Destroy (other.gameObject); 
+				//other.gameObject.SetActive (false);
+				//score += 1;
+				//scoreText = "Score: " + score;
+				coin.Play (); 
+				//renderer.color = new Color (0f, 0f, 0f, 1f);
+//				blueBallCount++; 
+//				if (blueBallCount >= 10) {
+//					Destroy (barrier); 
+				}
 			//gameObject.GetComponent<Renderer>().color = new Color (0.5f, 0.5f, 0.5f, 1f);
 
-		} else {
-			renderer.color = new Color(255f, 166f, 245f, 255f);
+		} 
 
-		}
-	}
 
 
 

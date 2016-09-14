@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BallSpawn : MonoBehaviour {
+public class BallSpawnTwo : MonoBehaviour {
 
 	public Sprite[] sprites;
 	public float time = .3f; 
@@ -17,7 +17,7 @@ public class BallSpawn : MonoBehaviour {
 	}
 
 	void Spawn(){
-		GameObject go = Instantiate(Resources.Load("Prefabs/Color")) as GameObject;
+		GameObject go = Instantiate(Resources.Load("Prefabs/Color"), new Vector3(25.2f, 0f, 0f), Quaternion.identity) as GameObject;
 		int num = GetComponent<GetColor>().GetSpriteColor();
 
 		go.GetComponent<SpriteRenderer>().sprite = sprites[num];
